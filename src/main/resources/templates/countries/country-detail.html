@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Country Details</title>
+</head>
+<body>
+<h1>Country Details</h1>
+<p><strong>ID:</strong> <span th:text="${country.country_id}">1</span></p>
+<p><strong>Country:</strong> <span th:text="${country.country}">Country Name</span></p>
+<p><strong>Last Update:</strong> <span th:text="${country.last_update}">2024-08-25</span></p>
+<a href="/countries">Back to List</a>
+</body>
+</html>

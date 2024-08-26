@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Film Categories</title>
+</head>
+<body>
+<h1>Film Categories</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Category</th>
+        <th>Last Update</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="filmCategory : ${filmCategories}">
+        <td th:text="${filmCategory.filmCategoryId}"></td>
+        <td th:text="${filmCategory.category.name}"></td>
+        <td th:text="${filmCategory.last_update}"></td>
+        <td>
+            <a th:href="@{/filmCategories/edit/{id}(id=${filmCategory.filmCategoryId})}">Edit</a>
+            <a th:href="@{/filmCategories/delete/{id}(id=${filmCategory.filmCategoryId})}" onclick="return confirm('Are you sure?')">Delete</a>
+            <a th:href="@{/filmCategories/{id}(id=${filmCategory.filmCategoryId})}">Details</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/filmCategories/create">Create New Film Category</a>
+</body>
+</html>

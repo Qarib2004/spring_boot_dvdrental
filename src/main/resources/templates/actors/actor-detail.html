@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actor Detail</title>
+</head>
+<body>
+<h1>Actor Detail</h1>
+<p><strong>Actor ID:</strong> <span th:text="${actor.actorId}"></span></p>
+<p><strong>First Name:</strong> <span th:text="${actor.firstName}"></span></p>
+<p><strong>Last Name:</strong> <span th:text="${actor.lastName}"></span></p>
+<a th:href="@{/actors}">Back to List</a>
+<a th:href="@{/actors/edit/{id}(id=${actor.actorId})}">Edit Actor</a>
+</body>
+</html>

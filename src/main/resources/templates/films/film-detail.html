@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Film Details</title>
+</head>
+<body>
+<h1>Film Details</h1>
+<p><strong>Title:</strong> <span th:text="${film.title}"></span></p>
+<p><strong>Description:</strong> <span th:text="${film.description}"></span></p>
+<p><strong>Release Year:</strong> <span th:text="${film.releaseYear}"></span></p>
+<p><strong>Language:</strong> <span th:text="${film.language.language_id}"></span></p>
+<p><strong>Rental Duration:</strong> <span th:text="${film.rentalDuration}"></span></p>
+<p><strong>Rental Rate:</strong> <span th:text="${film.rentalRate}"></span></p>
+<p><strong>Length:</strong> <span th:text="${film.length}"></span></p>
+<p><strong>Replacement Cost:</strong> <span th:text="${film.replacementCost}"></span></p>
+<p><strong>Rating:</strong> <span th:text="${film.rating}"></span></p>
+<p><strong>Special Features:</strong> <span th:text="${film.specialFeatures}"></span></p>
+<p><strong>Full Text:</strong> <span th:text="${film.fullText}"></span></p>
+<a href="/films">Back to List</a>
+</body>
+</html>

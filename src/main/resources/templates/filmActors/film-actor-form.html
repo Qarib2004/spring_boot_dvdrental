@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${filmActor.filmActorId == null} ? 'Create Film Actor' : 'Edit Film Actor'">Film Actor</title>
+</head>
+<body>
+<h1 th:text="${filmActor.filmActorId == null} ? 'Create Film Actor' : 'Edit Film Actor'">Film Actor Form</h1>
+<form th:action="@{${filmActor.filmActorId == null} ? '/filmActors' : '/filmActors/update/' + ${filmActor.filmActorId}}" th:object="${filmActor}" method="post">
+    <label for="actor">Actor:</label>
+    <select id="actor" th:field="*{actor}" required>
+        <option th:each="actor : ${actors}" th:value="${actor}" th:text="${actor.firstName} + ' ' + ${actor.lastName}"></option>
+    </select>
+
+    <label for="lastUpdate">Last Update:</label>
+    <input type="datetime-local" id="lastUpdate" th:field="*{lastUpdate}" required />
+
+    <button type="submit" th:text="${filmActor.filmActorId == null} ? 'Create' : 'Update'"></button>
+</form>
+<a href="/filmActors">Cancel</a>
+</body>
+</html>

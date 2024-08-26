@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Address List</title>
+</head>
+<body>
+<h1>Addresses</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Address</th>
+        <th>Address 2</th>
+        <th>District</th>
+        <th>City</th>
+        <th>Postal Code</th>
+        <th>Phone</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="address : ${addresses}">
+        <td th:text="${address.address_id}">1</td>
+        <td th:text="${address.address}">123 Main St</td>
+        <td th:text="${address.address2}">Apt 4B</td>
+        <td th:text="${address.district}">Downtown</td>
+        <td th:text="${address.city.city_id}">New York</td>
+        <td th:text="${address.postalCode}">10001</td>
+        <td th:text="${address.phone}">555-1234</td>
+        <td>
+            <a th:href="@{'/addresses/' + ${address.address_id}}">View</a>
+            <a th:href="@{'/addresses/edit/' + ${address.address_id}}">Edit</a>
+            <a th:href="@{'/addresses/delete/' + ${address.address_id}}">Delete</a>
+        </td>
+    </tr>
+</table>
+<a href="/addresses/add">Add New Address</a>
+</body>
+</html>

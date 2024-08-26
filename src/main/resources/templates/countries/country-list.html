@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Countries List</title>
+</head>
+<body>
+<h1>Countries List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Country</th>
+        <th>Last Update</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="country : ${countries}">
+        <td th:text="${country.country_id}">1</td>
+        <td th:text="${country.country}">Country Name</td>
+        <td th:text="${country.last_update}">2024-08-25</td>
+        <td>
+            <a th:href="@{/countries/{id}(id=${country.country_id})}">View</a>
+            <a th:href="@{/countries/edit/{id}(id=${country.country_id})}">Edit</a>
+            <a th:href="@{/countries/delete/{id}(id=${country.country_id})}" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/countries/add">Add New Country</a>
+</body>
+</html>

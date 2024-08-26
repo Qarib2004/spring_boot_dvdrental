@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actor Form</title>
+</head>
+<body>
+<h1 th:text="${actor.actorId} == null ? 'Add New Actor' : 'Edit Actor'}"></h1>
+<form th:action="@{${actor.actorId} == null ? '/actors/add' : '/actors/edit/' + ${actor.actorId}}" th:object="${actor}" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" th:field="*{firstName}" required><br>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" th:field="*{lastName}" required><br>
+    <button type="submit">Save</button>
+</form>
+<a th:href="@{/actors}">Back to List</a>
+</body>
+</html>

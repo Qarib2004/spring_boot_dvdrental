@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Country Form</title>
+</head>
+<body>
+<h1 th:text="${country.country_id == null} ? 'Add Country' : 'Edit Country'">Country Form</h1>
+<form th:action="@{${country.country_id == null} ? '/countries/add' : '/countries/edit/' + ${country.country_id}}" th:object="${country}" method="post">
+    <p>
+        <label for="country">Country:</label>
+        <input type="text" id="country" th:field="*{country}" />
+    </p>
+    <p>
+        <label for="last_update">Last Update:</label>
+        <input type="datetime-local" id="last_update" th:field="*{last_update}" />
+    </p>
+    <p>
+        <button type="submit" th:text="${country.country_id == null} ? 'Add Country' : 'Update Country'">Save</button>
+    </p>
+</form>
+<a href="/countries">Cancel</a>
+</body>
+</html>

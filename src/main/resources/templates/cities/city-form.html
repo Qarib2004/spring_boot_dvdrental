@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create/Update City</title>
+</head>
+<body>
+<h1>Create/Update City</h1>
+<form th:action="@{/cities/create}" th:object="${city}" method="post">
+    <input type="hidden" th:field="*{city_id}"/>
+    <label for="city">City:</label>
+    <input type="text" th:field="*{city}" id="city"/>
+    <br/>
+    <label for="country">Country:</label>
+    <input type="text" th:field="*{country.country}" id="country"/>
+    <br/>
+    <label for="last_update">Last Update:</label>
+    <input type="datetime-local" th:field="*{last_update}" id="last_update"/>
+    <br/>
+    <button type="submit">Submit</button>
+</form>
+<a href="/cities">Cancel</a>
+</body>
+</html>

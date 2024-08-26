@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Address Detail</title>
+</head>
+<body>
+<h1>Address Details</h1>
+<p>ID: <span th:text="${address.address_id}">1</span></p>
+<p>Address: <span th:text="${address.address}">123 Main St</span></p>
+<p>Address 2: <span th:text="${address.address2}">Apt 4B</span></p>
+<p>District: <span th:text="${address.district}">Downtown</span></p>
+<p>City: <span th:text="${address.city.city_id}">New York</span></p>
+<p>Postal Code: <span th:text="${address.postalCode}">10001</span></p>
+<p>Phone: <span th:text="${address.phone}">555-1234</span></p>
+<a href="/addresses">Back to List</a>
+</body>
+</html>

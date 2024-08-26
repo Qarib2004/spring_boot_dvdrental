@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Actors</title>
+</head>
+<body>
+<h1>Film Actors</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Film Actor ID</th>
+        <th>Actor Name</th>
+        <th>Last Update</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="filmActor : ${filmActors}">
+        <td th:text="${filmActor.filmActorId}">1</td>
+        <td th:text="${filmActor.actor.firstName} + ' ' + ${filmActor.actor.lastName}">Actor Name</td>
+        <td th:text="${filmActor.lastUpdate}">2024-08-26</td>
+        <td>
+            <a th:href="@{|/filmActors/edit/${filmActor.filmActorId}|}">Edit</a> |
+            <a th:href="@{|/filmActors/delete/${filmActor.filmActorId}|}" onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/filmActors/add">Add New Film Actor</a>
+</body>
+</html>

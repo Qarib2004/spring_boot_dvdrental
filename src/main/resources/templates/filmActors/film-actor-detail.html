@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Film Actor Details</title>
+</head>
+<body>
+<h1>Film Actor Details</h1>
+<p><strong>Actor:</strong> <span th:text="${filmActor.actor.firstName} + ' ' + ${filmActor.actor.lastName}"></span></p>
+<p><strong>Last Update:</strong> <span th:text="${filmActor.lastUpdate}"></span></p>
+<a href="/filmActors">Back to List</a>
+</body>
+</html>

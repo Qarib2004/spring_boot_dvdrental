@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create or Edit Film Category</title>
+</head>
+<body>
+<h1 th:text="${filmCategory.filmCategoryId == 0} ? 'Create Film Category' : 'Edit Film Category'"></h1>
+<form th:action="@{${filmCategory.filmCategoryId == 0} ? '/filmCategories/create' : '/filmCategories/update/' + ${filmCategory.filmCategoryId}}" th:object="${filmCategory}" method="post">
+    <label for="category">Category:</label>
+    <input type="text" id="category" th:field="*{category.name}" placeholder="Enter category name" required />
+
+    <label for="lastUpdate">Last Update:</label>
+    <input type="datetime-local" id="lastUpdate" th:field="*{last_update}" required />
+
+    <button type="submit" th:text="${filmCategory.filmCategoryId == 0} ? 'Create' : 'Update'"></button>
+</form>
+<a href="/filmCategories">Cancel</a>
+</body>
+</html>
