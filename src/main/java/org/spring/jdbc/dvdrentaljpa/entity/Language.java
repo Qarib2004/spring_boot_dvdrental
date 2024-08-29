@@ -17,11 +17,6 @@ public class Language {
     @Column(name = "last_update",nullable = false,updatable = true)
     private LocalDateTime last_update;
 
-//    public Language(int language_id) {
-//        this.language_id = language_id;
-//        this.name = name;
-//        this.last_update = last_update;
-//    }
 
     public Language(int language_id, String name, LocalDateTime last_update) {
         this.language_id = language_id;

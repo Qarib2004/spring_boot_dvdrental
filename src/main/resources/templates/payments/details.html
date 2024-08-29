@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Payment Details</title>
+</head>
+<body>
+<h1>Payment Details</h1>
+<p><strong>Customer:</strong> <span th:text="${payment.customer.customer_id}"></span></p>
+<p><strong>Staff:</strong> <span th:text="${payment.staff.staff_id}"></span></p>
+<p><strong>Rental:</strong> <span th:text="${payment.rental.rental_id}"></span></p>
+<p><strong>Amount:</strong> <span th:text="${payment.amount}"></span></p>
+<p><strong>Payment Date:</strong> <span th:text="${payment.payment_date}"></span></p>
+<a href="/payments">Back to List</a>
+</body>
+</html>

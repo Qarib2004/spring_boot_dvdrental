@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Details</title>
+</head>
+<body>
+<h1>Rental Details</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <td th:text="${rental.rental_id}"></td>
+    </tr>
+    <tr>
+        <th>Rental Date</th>
+        <td th:text="${rental.rental_date}"></td>
+    </tr>
+    <tr>
+        <th>Inventory</th>
+        <td th:text="${rental.inventory}"></td>
+    </tr>
+    <tr>
+        <th>Customer</th>
+        <td th:text="${rental.customer}"></td>
+    </tr>
+    <tr>
+        <th>Return Date</th>
+        <td th:text="${rental.return_date}"></td>
+    </tr>
+    <tr>
+        <th>Staff</th>
+        <td th:text="${rental.staff}"></td>
+    </tr>
+    <tr>
+        <th>Last Update</th>
+        <td th:text="${rental.last_update}"></td>
+    </tr>
+</table>
+<a href="/rentals">Back to List</a>
+<a th:href="@{/rentals/edit/{id}(id=${rental.rental_id})}">Edit</a>
+<a th:href="@{/rentals/delete/{id}(id=${rental.rental_id})}">Delete</a>
+</body>
+</html>

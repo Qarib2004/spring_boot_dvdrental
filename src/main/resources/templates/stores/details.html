@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Store Details</title>
+</head>
+<body>
+<h1>Store Details</h1>
+<p>ID: <span th:text="${store.store_id}"></span></p>
+<p>Manager: <span th:text="${store.manager_staff}"></span></p>
+<p>Address: <span th:text="${store.address}"></span></p>
+<p>Last Update: <span th:text="${store.last_update}"></span></p>
+<a href="/stores">Back to List</a>
+</body>
+</html>

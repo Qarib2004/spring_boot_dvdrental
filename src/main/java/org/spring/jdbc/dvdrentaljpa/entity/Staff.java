@@ -51,6 +51,8 @@ public class Staff {
     }
 
 
+
+
     public int getStaff_id() {
         return staff_id;
     }
@@ -75,13 +77,6 @@ public class Staff {
         this.last_name = last_name;
     }
 
-//    public int getAddress_id() {
-//        return address_id;
-//    }
-//
-//    public void setAddress_id(int address_id) {
-//        this.address_id = address_id;
-//    }
 
     public String getEmail() {
         return email;
@@ -91,13 +86,6 @@ public class Staff {
         this.email = email;
     }
 
-//    public int getStore_id() {
-//        return store_id;
-//    }
-//
-//    public void setStore_id(int store_id) {
-//        this.store_id = store_id;
-//    }
 
 
     public Address getAddress() {
@@ -163,9 +151,9 @@ public class Staff {
                 "staff_id=" + staff_id +
                 ", first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +
-               // ", address_id=" + address +
+                ", address_id=" + address +
                 ", email='" + email + '\'' +
-               // ", store_id=" + store +
+                ", store=" + store +
                 ", active=" + active +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +

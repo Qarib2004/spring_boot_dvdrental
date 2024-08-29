@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create/Edit Rental</title>
+</head>
+<body>
+<h1 th:text="${rental.rental_id != null} ? 'Edit Rental' : 'Create Rental'"></h1>
+<form th:action="@{/rentals/create}" th:object="${rental}" method="post">
+    <label for="rental_date">Rental Date:</label>
+    <input type="datetime-local" id="rental_date" th:field="*{rental_date}" required><br>
+
+    <label for="inventory">Inventory:</label>
+    <input type="text" id="inventory" th:field="*{inventory}" required><br>
+
+    <label for="customer">Customer:</label>
+    <input type="text" id="customer" th:field="*{customer}" required><br>
+
+    <label for="return_date">Return Date:</label>
+    <input type="datetime-local" id="return_date" th:field="*{return_date}" required><br>
+
+    <label for="staff">Staff:</label>
+    <input type="text" id="staff" th:field="*{staff}" required><br>
+
+    <label for="last_update">Last Update:</label>
+    <input type="datetime-local" id="last_update" th:field="*{last_update}" required><br>
+
+    <button type="submit">Save</button>
+</form>
+<a href="/rentals">Back to List</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Details</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Ссылка на CSS, если есть -->
+</head>
+<body>
+<h1>Staff Details</h1>
+<p><strong>ID:</strong> <span th:text="${staff.staff_id}"></span></p>
+<p><strong>First Name:</strong> <span th:text="${staff.first_name}"></span></p>
+<p><strong>Last Name:</strong> <span th:text="${staff.last_name}"></span></p>
+<p><strong>Email:</strong> <span th:text="${staff.email}"></span></p>
+<p><strong>Active:</strong> <span th:text="${staff.active ? 'Yes' : 'No'}"></span></p>
+<p><strong>Username:</strong> <span th:text="${staff.username}"></span></p>
+<p><strong>Last Update:</strong> <span th:text="${staff.last_update}"></span></p>
+<p><strong>Picture:</strong></p>
+<img th:src="@{/images/staffs/{id}.jpg(id=${staff.staff_id})}" alt="Staff Picture" width="200"/>
+<br>
+<a href="/staffs">Back to list</a>
+<a th:href="@{/staffs/edit/{id}(id=${staff.staff_id})}">Edit</a>
+</body>
+</html>

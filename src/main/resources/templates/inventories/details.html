@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Inventory Details</title>
+</head>
+<body>
+<h1>Inventory Details</h1>
+<p><strong>Film:</strong> <span th:text="${inventory.film.title}"></span></p>
+<p><strong>Store:</strong> <span th:text="${inventory.store.store_id}"></span></p>
+<p><strong>Last Update:</strong> <span th:text="${inventory.last_update}"></span></p>
+<a href="/inventories">Back to List</a>
+</body>
+</html>

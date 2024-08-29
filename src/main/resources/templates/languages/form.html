@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create or Edit Language</title>
+</head>
+<body>
+<h1 th:text="${language.language_id == 0} ? 'Create Language' : 'Edit Language'"></h1>
+<form th:action="@{${language.language_id == 0} ? '/languages/create' : '/languages/update/' + ${language.language_id}}" th:object="${language}" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" placeholder="Enter language name" required />
+
+    <label for="lastUpdate">Last Update:</label>
+    <input type="datetime-local" id="lastUpdate" th:field="*{last_update}" required />
+
+    <button type="submit" th:text="${language.language_id == 0} ? 'Create' : 'Update'"></button>
+</form>
+<a href="/languages">Cancel</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Language List</title>
+</head>
+<body>
+<h1>Language List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Last Update</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="language : ${languages}">
+        <td th:text="${language.language_id}"></td>
+        <td th:text="${language.name}"></td>
+        <td th:text="${language.last_update}"></td>
+        <td>
+            <a th:href="@{/languages/edit/{id}(id=${language.language_id})}">Edit</a>
+            <a th:href="@{/languages/delete/{id}(id=${language.language_id})}" onclick="return confirm('Are you sure?')">Delete</a>
+            <a th:href="@{/languages/{id}(id=${language.language_id})}">Details</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/languages/create">Create New Language</a>
+</body>
+</html>

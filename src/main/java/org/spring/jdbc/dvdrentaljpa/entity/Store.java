@@ -36,22 +36,6 @@ public class Store {
         this.store_id = store_id;
     }
 
-//    public int getManager_staff_id() {
-//        return manager_staff_id;
-//    }
-//
-//    public void setManager_staff_id(int manager_staff_id) {
-//        this.manager_staff_id = manager_staff_id;
-//    }
-//
-//    public int getAddress_id() {
-//        return address_id;
-//    }
-//
-//    public void setAddress_id(int address_id) {
-//        this.address_id = address_id;
-//    }
-
 
     public Staff getManager_staff() {
         return manager_staff;
@@ -81,8 +65,8 @@ public class Store {
     public String toString() {
         return "Store{" +
                 "store_id=" + store_id +
-             //   ", manager_staff_id=" + manager_staff +
-              //  ", address_id=" + address +
+                ", manager_staff_id=" + manager_staff +
+                ", address_id=" + address +
                 ", last_update=" + last_update +
                 '}';
     }

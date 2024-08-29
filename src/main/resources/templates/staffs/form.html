@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create/Update Staff</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Ссылка на CSS, если есть -->
+</head>
+<body>
+<h1 th:text="${staff.staff_id == 0 ? 'Create New Staff' : 'Edit Staff'}"></h1>
+<form th:action="@{/staffs/${staff.staff_id == 0 ? 'create' : 'update/' + staff.staff_id}}" method="post">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" th:value="${staff.first_name}" required>
+    <br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" th:value="${staff.last_name}" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" th:value="${staff.email}" required>
+    <br>
+    <label for="active">Active:</label>
+    <input type="checkbox" id="active" name="active" th:checked="${staff.active}">
+    <br>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" th:value="${staff.username}" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" th:value="${staff.password}" required>
+    <br>
+    <label for="picture">Picture:</label>
+    <input type="file" id="picture" name="picture">
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<a href="/staffs">Back to list</a>
+</body>
+</html>

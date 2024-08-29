@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create or Edit Inventory</title>
+</head>
+<body>
+<h1 th:text="${inventory.inventory_id == 0} ? 'Create Inventory' : 'Edit Inventory'"></h1>
+<form th:action="@{${inventory.inventory_id == 0} ? '/inventories/create' : '/inventories/update/' + ${inventory.inventory_id}}" th:object="${inventory}" method="post">
+    <label for="film">Film:</label>
+    <input type="text" id="film" th:field="*{film.title}" placeholder="Enter film title" required />
+
+    <label for="store">Store:</label>
+    <input type="text" id="store" th:field="*{store.store_id}" placeholder="Enter store name" required />
+
+    <label for="lastUpdate">Last Update:</label>
+    <input type="datetime-local" id="lastUpdate" th:field="*{last_update}" required />
+
+    <button type="submit" th:text="${inventory.inventory_id == 0} ? 'Create' : 'Update'"></button>
+</form>
+<a href="/inventories">Cancel</a>
+</body>
+</html>

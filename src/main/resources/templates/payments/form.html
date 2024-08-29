@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create or Edit Payment</title>
+</head>
+<body>
+<h1 th:text="${payment.payment_id == 0} ? 'Create Payment' : 'Edit Payment'"></h1>
+<form th:action="@{${payment.payment_id == 0} ? '/payments/create' : '/payments/update/' + ${payment.payment_id}}" th:object="${payment}" method="post">
+    <label for="customer">Customer:</label>
+    <input type="text" id="customer" th:field="*{customer.customer_id}" placeholder="Enter customer ID" required />
+
+    <label for="staff">Staff:</label>
+    <input type="text" id="staff" th:field="*{staff.staff_id}" placeholder="Enter staff ID" required />
+
+    <label for="rental">Rental:</label>
+    <input type="text" id="rental" th:field="*{rental.rental_id}" placeholder="Enter rental ID" required />
+
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" th:field="*{amount}" step="0.01" placeholder="Enter payment amount" required />
+
+    <label for="paymentDate">Payment Date:</label>
+    <input type="datetime-local" id="paymentDate" th:field="*{payment_date}" required />
+
+    <button type="submit" th:text="${payment.payment_id == 0} ? 'Create' : 'Update'"></button>
+</form>
+<a href="/payments">Cancel</a>
+</body>
+</html>
